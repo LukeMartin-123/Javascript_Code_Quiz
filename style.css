@@ -1,0 +1,36 @@
+.header {
+    float: left;
+}
+
+
+.btn {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+}
+
+.upper-left {
+    margin-top: 4px;
+    margin-left: 8px;
+}
+
+.upper-right {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+
+h1 {
+    left: 0;
+    line-height: 25px;
+    margin-top: -125px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}
+
