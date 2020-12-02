@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;
+}
+
+
 h1 {
     left: 0;
     line-height: 25px;
@@ -12,15 +17,15 @@ h1 {
     float: left;
 }
 
-.btn {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+.text-center {
+    margin-top: 375px;
+}
+
+.mybuttons {
+    text-align: center;
 
 }
+
 
 #choiceA {
     
@@ -49,11 +54,9 @@ h1 {
     right: 16px;
 }
 
-.quiz {
-    /* display: none; */
-}
 
 .question {
+    display: none;
     left: 0;
     line-height: 25px;
     margin-top: -75px;
