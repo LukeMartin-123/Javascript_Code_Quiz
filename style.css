@@ -1,7 +1,16 @@
+h1 {
+    left: 0;
+    line-height: 25px;
+    margin-top: -125px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 100%;
+}
+
 .header {
     float: left;
 }
-
 
 .btn {
     margin: 0;
@@ -12,6 +21,22 @@
     transform: translate(-50%, -50%);
 
 }
+
+#choiceA {
+    
+}
+
+#choiceB {
+    
+}
+
+#choiceC {
+    
+}
+
+#choiceD {
+   
+} 
 
 .upper-left {
     margin-top: 4px;
@@ -24,13 +49,16 @@
     right: 16px;
 }
 
-h1 {
+.quiz {
+    /* display: none; */
+}
+
+.question {
     left: 0;
     line-height: 25px;
-    margin-top: -125px;
+    margin-top: -75px;
     position: absolute;
     text-align: center;
     top: 50%;
     width: 100%;
 }
-
