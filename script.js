@@ -1,21 +1,39 @@
 const startButton = document.getElementById("start");
 const hiddenElements = document.getElementById("questionSection")
+const questionElement = document.getElementById("question")
+const answerButtonsElement = document.getElementById("correct") 
 
 startButton.addEventListener("click", startGame)
 
 function startGame() {
     console.log("started")
     startButton.classList.add('hide')
-    hiddenElements.classList.remove('hide')
+    hiddenElements.classList.remove('hide') 
+    currentQuestionIndex = 0 
+    setNextQuestion()
 }
 
-var current_question = {}
+function setNextQuestion() {
+    showQuestion(currentQuestionIndex)
+
+}
+
+function showQuestion(availableQuestions) {
+    questionElement.innerText = currentQuestionIndex.question
+
+}
+
+
+
+
+
+
 var acceptingAnswers = true;
 
 // var startButton = document.getElementById("start")
 // startButton.onclick = function() {startButton.style.display = "none"}
 
-var availableQuestions = [
+const availableQuestions = [
     {  
         question : "Commonly used data types do NOT include:",
         choiceA : "strings",
@@ -46,7 +64,7 @@ var availableQuestions = [
 
 ]
 
-console.log (availableQuestions[0])
+
 
 const MAX_QUESTIONS = 3
 
@@ -56,14 +74,14 @@ const MAX_QUESTIONS = 3
 
 
 
-function showQuestion() {
-    var q = questions;
-    question.innerHTML = array_of_questions[current_question].question;
-    choiceA.innerHTML = array_of_questions[current_question].question;
-    choiceB.innerHTML = array_of_questions[current_question].question;
-    choiceC.innerHTML = array_of_questions[current_question].question;
-    choiceD.innerHTML = array_of_questions[current_question].question;
-}
+// function showQuestion() {
+//     var q = questions;
+//     question.innerHTML = array_of_questions[current_question].question;
+//     choiceA.innerHTML = array_of_questions[current_question].question;
+//     choiceB.innerHTML = array_of_questions[current_question].question;
+//     choiceC.innerHTML = array_of_questions[current_question].question;
+//     choiceD.innerHTML = array_of_questions[current_question].question;
+// }
 
 
 
