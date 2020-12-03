@@ -1,15 +1,19 @@
 const startButton = document.getElementById("start");
 const hiddenElements = document.getElementById("questionSection")
 const questionElement = document.getElementById("question")
-const answerButtonsElement = document.getElementById("correct") 
+const answerButtonsElement = document.getElementById("answerChoices") 
 
 startButton.addEventListener("click", startGame)
+var choiceA = document.getElementById("choiceA")
+var choiceB = document.getElementById("choiceB")
+var choiceC = document.getElementById("choiceC")
+var choiceD = document.getElementById("choiceD")
+currentQuestionIndex = 0 
 
 function startGame() {
-    console.log("started")
     startButton.classList.add('hide')
     hiddenElements.classList.remove('hide') 
-    currentQuestionIndex = 0 
+    
     setNextQuestion()
 }
 
@@ -24,20 +28,31 @@ function showQuestion() {
     choiceB.innerHTML = availableQuestions[currentQuestionIndex].choiceB;
     choiceC.innerHTML = availableQuestions[currentQuestionIndex].choiceC;
     choiceD.innerHTML = availableQuestions[currentQuestionIndex].choiceD; 
+    document.getElementsByClassName("answerChoices")
+    choiceA.addEventListener('click', selectAnswer)
+    choiceB.addEventListener('click', selectAnswer)
+    choiceC.addEventListener('click', selectAnswer)
+    choiceD.addEventListener('click', selectAnswer)
+    highScores.addEventListener('click', selectAnswer)
 }
 
-function selectAnswer () {
+function selectAnswer (e) {
+    const selectedbutton = e.target.innerHTML
+    currentQuestionIndex++; 
+    if (currentQuestionIndex <= availableQuestions.length) {
+        setNextQuestion()
+    }
+    else {
+        // hide questions and show scoreboard/let user submit score with initials
+        hiddenElements.classList.add('hide') 
 
+    }
 
 }
-
-
 
 
 var acceptingAnswers = true;
 
-// var startButton = document.getElementById("start")
-// startButton.onclick = function() {startButton.style.display = "none"}
 
 const availableQuestions = [
     {  
