@@ -1,14 +1,9 @@
-// const start = document.getElementById("btn");
-// const quiz = document.getElementById("quiz");
-// const question = document.getElementById("question");
-// const choiceA = document.getElementById("choiceA");
-// const choiceB = document.getElementById("choiceB");
-// const choiceC = document.getElementById("choiceC");
-// const choiceD = document.getElementById("choiceD");
 
-
-var questions = document.getElementById("questionSection")
-
+function start() {
+    document.getElementById("none").innerHTML.button.style.visibility = "hidden";
+    button.style.display = "none";
+    
+}
 
 let array_of_questions = [
     {  
@@ -17,6 +12,7 @@ let array_of_questions = [
         choiceB : "booleans" 
         choiceC : "objects"
         choiceD : "alerts"
+        correct: "D"
 
     }, {
 
@@ -25,6 +21,7 @@ let array_of_questions = [
         choiceB : "curly brackets"
         choiceC : "parenthesis"
         choiceD : "pizza slices"
+        correct : "B"
 
     }, {
 
@@ -33,12 +30,15 @@ let array_of_questions = [
         choiceB : "other arrays"
         choiceC : "booleans"
         choiceD : "all of the above"
+        correct : "D"
 
     }
 
 ]
 
-let current_question =0;
+var questions = document.getElementById("questionSection")
+
+let current_question = 0;
 
 function prompt () {
     var question = document.getElementById("question")
