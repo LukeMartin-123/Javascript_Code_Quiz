@@ -11,11 +11,11 @@
 </head>
 
 <header>
-    <h2 class=upper-left>
+    <h2 class="upperLeft">
         View Highscore
     </h2>
 
-    <h2 class=upper-right>
+    <h2 class="upperRight">
         Timer </h2>
 </header>
 
@@ -24,28 +24,25 @@
 
     <main class="container">
         <h1> Javascript Coding Quiz </h1>
-        
-       <div class="text-center">
-       <button type="button" class="btn btn-success" id="start"> Start</button>
-    </div>
-    </main>
+        <button type="button" class="btn btn-success" id="start"> Start</button>
 
-    <section id="questionSection">
-        <p class="question" id="question">
-            Question goes here </p>
+        <section id="questionSection" class= hide>
+            <p class="question" id="question">
+                Question goes here </p>
 
-        <section class="myButtons">
-                <div class="text-center">
+            <div class="buttons">
+                
+                <section class="myButtons" id="answerButtons">
                     <button type="button" class="btn btn-primary" id="choiceA"> Answer A</button>
                     <button type="button" class="btn btn-primary" id="choiceB"> Answer B</button>
                     <button type="button" class="btn btn-primary" id="choiceC"> Answer C</button>
                     <button type="button" class="btn btn-primary" id="choiceD"> Answer D</button>
-                </div>
+            </div>
         </section>
+        </div>
+        </section>
+    </main>
 
-
-
-    </section>
 
     <script src="script.js"></script>
 </body>

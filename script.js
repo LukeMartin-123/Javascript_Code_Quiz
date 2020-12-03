@@ -1,8 +1,21 @@
-var startButton = document.getElementById("start")
-startButton.onclick = function() {startButton.style.display = "none"}
-    
+const startButton = document.getElementById("start");
+const hiddenElements = document.getElementById("questionSection")
 
-let array_of_questions = [
+startButton.addEventListener("click", startGame)
+
+function startGame() {
+    console.log("started")
+    startButton.classList.add('hide')
+    hiddenElements.classList.remove('hide')
+}
+
+var current_question = {}
+var acceptingAnswers = true;
+
+// var startButton = document.getElementById("start")
+// startButton.onclick = function() {startButton.style.display = "none"}
+
+var availableQuestions = [
     {  
         question : "Commonly used data types do NOT include:",
         choiceA : "strings",
@@ -33,9 +46,33 @@ let array_of_questions = [
 
 ]
 
-var questions = document.getElementById("questionSection")
+console.log (availableQuestions[0])
 
-let current_question = 0;
+const MAX_QUESTIONS = 3
+
+// getNewQuestion =
+//     if(availableQuestions.length === 0)
+//         localStorage.setItem('mostRecentScore', score)
+
+
+
+function showQuestion() {
+    var q = questions;
+    question.innerHTML = array_of_questions[current_question].question;
+    choiceA.innerHTML = array_of_questions[current_question].question;
+    choiceB.innerHTML = array_of_questions[current_question].question;
+    choiceC.innerHTML = array_of_questions[current_question].question;
+    choiceD.innerHTML = array_of_questions[current_question].question;
+}
+
+
+
+for (i = -1; i < availableQuestions.length; i++) {
+
+  }
+
+
+
 
 function prompt () {
     var question = document.getElementById("question")
