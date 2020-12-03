@@ -18,12 +18,18 @@ function setNextQuestion() {
 
 }
 
-function showQuestion(availableQuestions) {
-    questionElement.innerText = currentQuestionIndex.question
-
+function showQuestion() {
+    questionElement.innerHTML = availableQuestions[currentQuestionIndex].question
+    choiceA.innerHTML = availableQuestions[currentQuestionIndex].choiceA;
+    choiceB.innerHTML = availableQuestions[currentQuestionIndex].choiceB;
+    choiceC.innerHTML = availableQuestions[currentQuestionIndex].choiceC;
+    choiceD.innerHTML = availableQuestions[currentQuestionIndex].choiceD; 
 }
 
+function selectAnswer () {
 
+
+}
 
 
 
