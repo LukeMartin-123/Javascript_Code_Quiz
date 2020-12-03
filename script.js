@@ -1,36 +1,33 @@
-
-function start() {
-    document.getElementById("none").innerHTML.button.style.visibility = "hidden";
-    button.style.display = "none";
+var startButton = document.getElementById("start")
+startButton.onclick = function() {startButton.style.display = "none"}
     
-}
 
 let array_of_questions = [
     {  
-        question : "Commonly used data types do NOT include:"
-        choiceA : "strings"
-        choiceB : "booleans" 
-        choiceC : "objects"
-        choiceD : "alerts"
-        correct: "D"
+        question : "Commonly used data types do NOT include:",
+        choiceA : "strings",
+        choiceB : "booleans", 
+        choiceC : "objects",
+        choiceD : "alerts",
+        correct: "D",
 
     }, {
 
-        question : "The condition in an if / else statement is enclosed within ______:"
-        choiceA : "quotes"
-        choiceB : "curly brackets"
-        choiceC : "parenthesis"
-        choiceD : "pizza slices"
-        correct : "B"
+        question : "The condition in an if / else statement is enclosed within ______:",
+        choiceA : "quotes",
+        choiceB : "curly brackets",
+        choiceC : "parenthesis",
+        choiceD : "pizza slices",
+        correct : "B",
 
     }, {
 
-        question : "Arrays in JavaScript can be used to store ________:"
-        choiceA : "numbers and strings"
-        choiceB : "other arrays"
-        choiceC : "booleans"
-        choiceD : "all of the above"
-        correct : "D"
+        question : "Arrays in JavaScript can be used to store ________:",
+        choiceA : "numbers and strings",
+        choiceB : "other arrays",
+        choiceC : "booleans",
+        choiceD : "all of the above",
+        correct : "D",
 
     }
 
