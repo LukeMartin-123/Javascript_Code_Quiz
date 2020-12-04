@@ -44,10 +44,12 @@ margin-bottom: 175px;
 #questionSection {
     text-align: center;
     margin-bottom: 120px;
+    font-size: 45px;
 }
 
 .hide {
     display: none;
+    
 }
 
 #scoreLog {

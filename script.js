@@ -4,6 +4,7 @@ const questionElement = document.getElementById("question")
 const answerButtonsElement = document.getElementById("answerChoices") 
 const timerEl = document.getElementById("countdown")
 const initialInput = document.getElementById("scoreLog")
+const multipleChoice = document.getElementById("myButtons")
 
 startButton.addEventListener("click", startGame)
 var choiceA = document.getElementById("choiceA")
@@ -46,13 +47,12 @@ function showQuestion() {
     choiceB.addEventListener('click', selectAnswer)
     choiceC.addEventListener('click', selectAnswer)
     choiceD.addEventListener('click', selectAnswer)
-    highScores.addEventListener('click', selectAnswer)
 }
 
 function selectAnswer (e) {
     const selectedbutton = e.target.innerHTML
     currentQuestionIndex++; 
-    if (currentQuestionIndex <= availableQuestions.length) {
+    if (currentQuestionIndex <= availableQuestions.length -1) {
         setNextQuestion()
     }
 
@@ -60,6 +60,7 @@ function selectAnswer (e) {
         // hide questions and show scoreboard/let user submit score with initials
         hiddenElements.classList.add('hide') 
         initialInput.classList.remove('scoreLog')
+        multipleChoice.classList.add('hide') 
         
     }
 
@@ -101,11 +102,6 @@ const availableQuestions = [
     }
 
 ]
-
-
-for (i = -1; i < availableQuestions.length; i++) {
-
-  }
 
 
 function prompt () {
