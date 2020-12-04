@@ -7,6 +7,7 @@ const initialInput = document.getElementById("scoreLog")
 const multipleChoice = document.getElementById("myButtons")
 var timeLeft = 60;
 var endTime = timeLeft; 
+var timeInterval;
 
 startButton.addEventListener("click", startGame)
 var choiceA = document.getElementById("choiceA")
@@ -16,7 +17,7 @@ var choiceD = document.getElementById("choiceD")
 currentQuestionIndex = 0 
 
 function timer() {
-    var timeInterval = setInterval(function() {
+    var timeInterval = setInterval(function(timeRunning) {
       timerEl.textContent = timeLeft;
       timeLeft--;
       if (timeLeft <= 0) {clearInterval(timeInterval);
@@ -70,9 +71,12 @@ function selectAnswer (e) {
         initialInput.classList.remove('scoreLog')
         var endTime = timeLeft; 
         timeLeft = endTime;
-    }
- 
-}
+        var timeInterval = clearInterval(timeInterval);
+
+          } 
+        }
+    
+
 
 document.getElementsByClassName("answerChoices")
 
