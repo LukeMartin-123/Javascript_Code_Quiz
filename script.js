@@ -21,8 +21,8 @@ function timer() {
       if (timeLeft === -1) {clearInterval(timeInterval);
       }
     }, 1000);
- 
-  }
+}
+  
 
 function startGame() {
     startButton.classList.add('hide')
@@ -60,17 +60,12 @@ function selectAnswer (e) {
         // hide questions and show scoreboard/let user submit score with initials
         hiddenElements.classList.add('hide') 
         initialInput.classList.remove('scoreLog')
-        multipleChoice.classList.add('hide') 
-        
     }
-
+    var timeLeft = 60;
+    if (e.target.innerText != availableQuestions.correct) {timeLeft -= 10}
 }
 
 document.getElementsByClassName("answerChoices")
-
-
-var acceptingAnswers = true;
-
 
 const availableQuestions = [
     {  
@@ -79,7 +74,7 @@ const availableQuestions = [
         choiceB : "booleans", 
         choiceC : "objects",
         choiceD : "alerts",
-        correct: "D",
+        correct: "alerts",
 
     }, {
 
@@ -88,7 +83,7 @@ const availableQuestions = [
         choiceB : "curly brackets",
         choiceC : "parenthesis",
         choiceD : "pizza slices",
-        correct : "B",
+        correct : "curly brackets",
 
     }, {
 
@@ -97,17 +92,10 @@ const availableQuestions = [
         choiceB : "other arrays",
         choiceC : "booleans",
         choiceD : "all of the above",
-        correct : "D",
+        correct : "all of the above",
 
     }
 
 ]
 
 
-function prompt () {
-    var question = document.getElementById("question")
-    var choiceA = document.getElementById("choiceA")
-    var choiceB = document.getElementById("choiceB")
-    var choiceC = document.getElementById("choiceC")
-    var choiceD = document.getElementById("choiceD")
-}
