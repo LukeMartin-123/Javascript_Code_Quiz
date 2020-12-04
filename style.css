@@ -10,7 +10,8 @@ vertical-align: top;
 text-align: left;
 }
 
-.upperRight {
+.timer {
+font-size: 30px;
 text-align: right;
 margin-top: -40px;
 margin-right: 60px;
@@ -32,6 +33,10 @@ margin-bottom: 175px;
     
 }
 
+.p {
+    margin: auto;
+}
+
 #highScores {
     margin-top: 20px;
 }
@@ -42,6 +47,14 @@ margin-bottom: 175px;
 }
 
 .hide {
+    display: none;
+}
+
+#scoreLog {
+    margin-bottom: auto;
+}
+
+.scoreLog{
     display: none;
 }
 

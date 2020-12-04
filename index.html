@@ -12,42 +12,52 @@
 
 <header>
     <h2 class="upperLeft">
-        View Highscore
+        View Highscores
     </h2>
 
-    <h2 class="upperRight">
-        </h2>
+    <div class="timer" id="countdown">
 </header>
 
 <body>
 
     <main class="container">
-        <div class = "timer" id="countdown">
-            <p>timer goes here</p>
         </div>
         <h1> Javascript Coding Quiz </h1>
         <button type="button" class="btn btn-success" id="start"> Start</button>
-
-
         </div>
-        <section id="questionSection" class= hide>
+
+
+        <section id="questionSection" class=hide>
             <p class="question" id="question">
                 Question goes here </p>
 
             <div class="buttons">
-                
+
                 <section class="myButtons" id="answerButtons">
                     <button type="button" class="btn btn-primary answerChoices" id="choiceA"> Answer A</button>
                     <button type="button" class="btn btn-primary answerChoices" id="choiceB"> Answer B</button>
                     <button type="button" class="btn btn-primary answerChoices" id="choiceC"> Answer C</button>
                     <button type="button" class="btn btn-primary answerChoices" id="choiceD"> Answer D</button>
-                
-                <div class="highScoreButton">
+
+                    <div class="highScoreButton">
                         <button type="button" class="btn btn-primary" id="highScores"> HighScores </button>
+                    </div>
+                </section>
             </div>
         </section>
-        </div>
+
+        <section class="scoreLog" id="scoreLog">
+            <form>
+                <div class="input">
+                    <label for="initialInput">Enter Your Initials</label>
+                    <input type="initials" class="form" id="Input">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
         </section>
+
+
+
     </main>
 
 

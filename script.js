@@ -3,6 +3,7 @@ const hiddenElements = document.getElementById("questionSection")
 const questionElement = document.getElementById("question")
 const answerButtonsElement = document.getElementById("answerChoices") 
 const timerEl = document.getElementById("countdown")
+const initialInput = document.getElementById("scoreLog")
 
 startButton.addEventListener("click", startGame)
 var choiceA = document.getElementById("choiceA")
@@ -11,23 +12,21 @@ var choiceC = document.getElementById("choiceC")
 var choiceD = document.getElementById("choiceD")
 currentQuestionIndex = 0 
 
-
 function timer() {
     var timeLeft = 60;
-  
     var timeInterval = setInterval(function() {
-      timerEl.textContent = timeLeft + " seconds remaining";
+      timerEl.textContent = timeLeft;
       timeLeft--;
-  
+      if (timeLeft === -1) {clearInterval(timeInterval);
+      }
     }, 1000);
+ 
   }
-  
-
 
 function startGame() {
     startButton.classList.add('hide')
     hiddenElements.classList.remove('hide') 
-    
+    timer()
     setNextQuestion()
 }
 
@@ -60,6 +59,8 @@ function selectAnswer (e) {
     else {
         // hide questions and show scoreboard/let user submit score with initials
         hiddenElements.classList.add('hide') 
+        initialInput.classList.remove('scoreLog')
+        
     }
 
 }
