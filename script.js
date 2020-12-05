@@ -6,7 +6,7 @@ const timerEl = document.getElementById("countdown")
 const initialInput = document.getElementById("scoreLog")
 const multipleChoice = document.getElementById("myButtons")
 var timeLeft = 60;
-var endTime = timeLeft; 
+var endTime; 
 var timeInterval;
 
 startButton.addEventListener("click", startGame)
@@ -17,7 +17,7 @@ var choiceD = document.getElementById("choiceD")
 currentQuestionIndex = 0 
 
 function timer() {
-    var timeInterval = setInterval(function(timeRunning) {
+    timeInterval = setInterval(function(timeRunning) {
       timerEl.textContent = timeLeft;
       timeLeft--;
       if (timeLeft <= 0) {clearInterval(timeInterval);
@@ -71,11 +71,15 @@ function selectAnswer (e) {
         initialInput.classList.remove('scoreLog')
         var endTime = timeLeft; 
         timeLeft = endTime;
-        var timeInterval = clearInterval(timeInterval);
-
-          } 
+        function stopTimer() {
+            clearInterval(timeInterval);   
         }
+        stopTimer()
+        console.log(endTime)
+    }
     
+}
+
 
 
 document.getElementsByClassName("answerChoices")
