@@ -8,6 +8,10 @@ const multipleChoice = document.getElementById("myButtons")
 var timeLeft = 60;
 var endTime; 
 var timeInterval;
+const form = document.querySelector('form');
+const ul = document.querySelector('ul');
+const button = document.querySelector('button');
+const input = document.getElementById('item');
 
 startButton.addEventListener("click", startGame)
 var choiceA = document.getElementById("choiceA")
@@ -20,9 +24,12 @@ function timer() {
     timeInterval = setInterval(function(timeRunning) {
       timerEl.textContent = timeLeft;
       timeLeft--;
-      if (timeLeft <= 0) {clearInterval(timeInterval);
+      if (timeLeft <= -1) {clearInterval(timeInterval);
+        hiddenElements.classList.add('hide') 
+        initialInput.classList.remove('scoreLog')
       }
     }, 1000);
+  
 
     
 }
@@ -79,6 +86,19 @@ function selectAnswer (e) {
     }
     
 }
+
+const liMaker = (text) => {
+    const li = document.createElement('li')
+    li.textContent = text
+    ul.appendChild(li)
+}
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault()
+
+    liMaker(input.value)
+    input.value = ''
+})
 
 
 
