@@ -12,13 +12,15 @@ const form = document.querySelector('form');
 const ul = document.querySelector('ul');
 const button = document.querySelector('button');
 const input = document.getElementById('item');
+
 let itemsArray = []
+
 if(localStorage.getItem('items')) {
-    items = JSON.parse(localStorage.getItem('items'))
+    itemsArray = JSON.parse(localStorage.getItem('items'))
 } else {
-    items = []
+    localStorage.setItem('items', JSON.stringify(itemsArray))
 }
-localStorage.setItem('items', JSON.stringify(itemsArray))
+
 const data = JSON.parse(localStorage.getItem('items'))
 
 const liMaker = (text) => {
@@ -28,10 +30,10 @@ const liMaker = (text) => {
 }
 
 startButton.addEventListener("click", startGame)
-var choiceA = document.getElementById("choiceA")
-var choiceB = document.getElementById("choiceB")
-var choiceC = document.getElementById("choiceC")
-var choiceD = document.getElementById("choiceD")
+let choiceA = document.getElementById("choiceA")
+let choiceB = document.getElementById("choiceB")
+let choiceC = document.getElementById("choiceC")
+let choiceD = document.getElementById("choiceD")
 currentQuestionIndex = 0 
 
 function timer() {
@@ -43,9 +45,6 @@ function timer() {
         initialInput.classList.remove('scoreLog')
       }
     }, 1000);
-  
-
-    
 }
   
 
@@ -75,12 +74,9 @@ function showQuestion() {
 }
 
 function selectAnswer (e) {
-    var selectedbutton = e.target.innerHTML;
-    console.log(selectedbutton);
-    console.log(availableQuestions[currentQuestionIndex].correct);
+    let selectedbutton = e.target.innerHTML;
     if (selectedbutton != availableQuestions[currentQuestionIndex].correct) {timeLeft -= 10}
     currentQuestionIndex++; 
-  
 
     if (currentQuestionIndex <= availableQuestions.length -1) {
         setNextQuestion()
@@ -90,17 +86,18 @@ function selectAnswer (e) {
         // hide questions and show scoreboard/let user submit score with initials
         hiddenElements.classList.add('hide') 
         initialInput.classList.remove('scoreLog')
-        var endTime = timeLeft; 
+
+        let endTime = timeLeft; 
         timeLeft = endTime;
+
         function stopTimer() {
             clearInterval(timeInterval);   
         }
+
         stopTimer()
-        console.log(endTime)
     }
     
 }
-
 
 
 form.addEventListener('submit', function (e) {
@@ -108,16 +105,18 @@ form.addEventListener('submit', function (e) {
 
     itemsArray.push(input.value)
     localStorage.setItem('items', JSON.stringify(itemsArray))
-    liMaker(input.value)
+
+    itemsArray.forEach((item) => {
+        liMaker(item)
+    })
     input.value = ''
 })
 
-data.forEach((item) => {
-    liMaker(item)
-})
+const clearButton = document.querySelector('#clear-all')
 
-button.addEventListener('click', function () {
+clearButton.addEventListener('click', function () {
     localStorage.clear()
+    itemsArray =[]
     while (ul.firstChild) {
         ul.removeChild(ul.firstChild)
     }

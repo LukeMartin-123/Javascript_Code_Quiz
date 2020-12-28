@@ -41,6 +41,17 @@ margin-bottom: 175px;
     margin-top: 20px;
 }
 
+.scores ul {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.link-container {
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
 #questionSection {
     text-align: center;
     margin-bottom: 120px;
@@ -69,26 +80,6 @@ h1 {
     margin-bottom: 320px;
 
 }
-
-.myButtons {
-
-}
-
-#choiceA {
-    
-}
-
-#choiceB {
-    
-}
-
-#choiceC {
-    
-}
-
-#choiceD {
-   
-} 
 
 
 
